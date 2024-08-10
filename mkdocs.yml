@@ -1,0 +1,20 @@
+site_name: ProCon
+
+theme:
+  name: material
+
+exclude_docs: |
+  venv
+
+plugins:
+  - search
+  - mkdoxy:
+      projects:
+        procon:
+          src-dirs: libprocon
+          full-doc: true
+          doxy-cfg:
+            FILE_PATTERNS: "*.h"
+            # cn_proc.h is just a Linux header, no need to document it
+            EXCLUDE_PATTERNS: "*cn_proc.h *venv"
+            EXTRACT_ALL: NO

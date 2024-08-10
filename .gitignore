@@ -1,0 +1,8 @@
+Makefile
+build/
+site/
+docs/venv/
+.vscode/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
