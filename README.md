@@ -3,7 +3,7 @@
 ## Installation
 
 In CMake:
-```
+```cmake
 include(FetchContent)
 FetchContent_Declare(
     libprocon
@@ -62,16 +62,21 @@ There aren't any alternative Linux APIs for process monitoring that meet the cri
 
 ### Why C++?
 
-C already has a process connector library: the kernel's `cn_proc`. Rust is possibly a better language for this, but [I had some `bindgen` issues](https://github.com/yorodm/cnproc-rs/issues/9), so moved to C++
+C already has a process connector library: the kernel's `cn_proc`. Rust is possibly a better language for this, but [I had some `bindgen` issues](https://github.com/yorodm/cnproc-rs/issues/9), so moved to C++.
+
+### Which Linux kernels support this?
+
+[`cn_proc` was enabled for non-root users in Linux 6.6](https://patchwork.kernel.org/project/netdevbpf/patch/20230719201821.495037-6-anjali.k.kulkarni@oracle.com/) (Thank you to the author and Oracle for supporting this!). This was released in October 2023. Technically you can use this library on earlier kernels, but if you have root available, there are better tools than this.
 
 ### Why use generators?
 
 This was the neatest API I could design.
 Using a single "receive" function would mean creating and destroying the socket each invocation, whereas a generator can retain its state.
+I could export an array of functions for subscribing and then reading, but this isn't providing much abstraction and isn't very user friendly.
 Using an iterator means more boilerplate and less elegant usage, especially if you don't want want to listen forever.
 Finally, using a generator means easy conversion to async/multithreaded support, without breaking the API in the future.
 
 ### Why require such a high C++ standard?
 
 In short, I wanted an elegant API and elegant implementation.
-C++ 20 gives me generators (see above), designated initializers etc
+C++ 20 gives me generators (see above), designated initializers etc.
