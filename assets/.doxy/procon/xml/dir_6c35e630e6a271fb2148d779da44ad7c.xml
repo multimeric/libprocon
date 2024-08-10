@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_6c35e630e6a271fb2148d779da44ad7c" kind="dir">
+    <compoundname>libprocon/include</compoundname>
+    <innerfile refid="procon_8h">procon.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="libprocon/include/"/>
+  </compounddef>
+</doxygen>

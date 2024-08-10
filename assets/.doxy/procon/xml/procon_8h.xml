@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="procon_8h" kind="file" language="C++">
+    <compoundname>procon.h</compoundname>
+    <includes local="yes">cn_proc.h</includes>
+    <includes local="no">coro/coro.hpp</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>coro/coro.hpp</label>
+      </node>
+      <node id="2">
+        <label>cn_proc.h</label>
+      </node>
+      <node id="1">
+        <label>libprocon/include/procon.h</label>
+        <link refid="procon_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="procon_8h_1a8f553dc7dff5ecfb6b6998f7296ccaed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>coro::generator&lt; proc_event * &gt;</type>
+        <definition>coro::generator&lt;proc_event*&gt; proc_iter</definition>
+        <argsstring>()</argsstring>
+        <name>proc_iter</name>
+        <briefdescription>
+<para>Continually yields process events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A generator of proc event pointers. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libprocon/include/procon.h" line="9" column="17" declfile="libprocon/include/procon.h" declline="9" declcolumn="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>By<sp/>including<sp/>a<sp/>custom<sp/>copy<sp/>of<sp/>the<sp/>cn_proc<sp/>header<sp/>instead<sp/>of<sp/>the<sp/>system<sp/>one,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>this<sp/>can<sp/>compile<sp/>on<sp/>Linux<sp/>versions<sp/>6.6<sp/>when<sp/>the<sp/>cn_proc<sp/>was<sp/>enabled<sp/>for<sp/>non-root<sp/>users<sp/>(bfdfdc2f3b7073571ce40b6d19193002b0126b6a)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>up<sp/>until<sp/>6.10,<sp/>when<sp/>this<sp/>was<sp/>fixed<sp/>(06e785aeb9ea8a43d0a3967c1ba6e69d758e82d4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>We<sp/>include<sp/>the<sp/>header<sp/>in<sp/>our<sp/>own<sp/>header<sp/>so<sp/>that<sp/>users<sp/>only<sp/>need<sp/>a<sp/>single<sp/>header</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;cn_proc.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;coro/coro.hpp&gt;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">coro::generator&lt;proc_event*&gt;<sp/>proc_iter();</highlight></codeline>
+    </programlisting>
+    <location file="libprocon/include/procon.h"/>
+  </compounddef>
+</doxygen>
